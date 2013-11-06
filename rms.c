@@ -5,14 +5,14 @@ int main (int argc, char *argv[])     //calculate and return the RMS of the inco
     int i = 0;
     int sample_length = fs / 8
 
-    float s_sq = {};
+    float s_sq = 0;
     float s_sum = 0;
     float s_rms = 0;
         
     for(i = 0; i < sample_length; i++) {
       
-      s_sq[i] = s[i] * s[i];
-      s_sum += s_sq[i];
+      s_sq = s[i] * s[i];
+      s_sum += s_sq;
     }
         
     s_rms = sqrt(s_sum / sample_length);
